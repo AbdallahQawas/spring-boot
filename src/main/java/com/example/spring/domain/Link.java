@@ -1,8 +1,6 @@
 package com.example.spring.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@RequiredArgsConstructor
+@Getter @Setter
+@ToString
 @NoArgsConstructor
-@Data
 public class Link extends Auditable{
 
     @Id
@@ -28,4 +28,8 @@ public class Link extends Auditable{
     // comments
     @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
+    }
 }
