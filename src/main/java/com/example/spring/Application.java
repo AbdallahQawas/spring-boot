@@ -24,7 +24,7 @@ public class Application {
 
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
         return args -> {
             Link link = new Link("Getting started with spring boot 2", "https://www.baeldung.com/spring-boot-console-app");
