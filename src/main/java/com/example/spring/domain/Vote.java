@@ -1,8 +1,6 @@
 package com.example.spring.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +9,9 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @NoArgsConstructor
-@Data
+@RequiredArgsConstructor
+@Getter
+@Setter
 public class Vote extends Auditable {
 
     @Id
